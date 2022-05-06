@@ -1,0 +1,135 @@
+<html>
+	<head>
+		<style>
+		input[type = button]
+		{
+			border: 1px solid transparent;
+			color: #000;
+			background-color: #f8f9fa;
+			border-color: #f8f9fa;
+			padding: 20px;
+			font-size: 25;
+			margin-bottom:5px;
+		}
+		input[type = text]
+		{
+			width: 87%;
+			padding: .375rem .75rem;
+			font-size: 1rem;
+			line-height: 1.5;
+			color: #212529;
+			background-color: #fff;
+			background-clip: padding-box;
+			border: 1px solid #ced4da;
+			margin-bottom:1%;
+		}
+		.row
+		{
+			display:flex;
+		}
+		.col
+		{
+			flex:1;;
+		}
+		.last
+		{
+			padding: 20 70px !important;
+		}
+		</style>
+	</head>
+<body>
+	<div style="margin:25%;">
+		<form>
+			<div class="row">
+				<div class="col">
+				<input type="text" id="exp">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+				<input type="button" value="1" onclick="IN(1)">
+				</div>
+				<div class="col">
+				<input type="button" value="2" onclick="IN(2)">
+				</div>
+				<div class="col">
+				<input type="button" value="3" onclick="IN(3)">
+				</div>
+				<div class="col">
+				<input type="button" value="+" onclick="IN('+')">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+				<input type="button" value="4" onclick="IN(4)">
+				</div>
+				<div class="col">
+				<input type="button" value="5" onclick="IN(5)">
+				</div>
+				<div class="col">
+				<input type="button" value="6" onclick="IN(6)">
+				</div>
+				<div class="col">
+				<input type="button" value="- " onclick="IN('-')">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+				<input type="button" value="7" onclick="IN(7)">
+				</div>
+				<div class="col">
+				<input type="button" value="8" onclick="IN(8)">
+				</div>
+				<div class="col">
+				<input type="button" value="9" onclick="IN(9)">
+				</div>
+				<div class="col">
+				<input type="button" value="*" onclick="IN('*')">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+				<input type="button" value=". " onclick="IN('.')">
+				</div>
+				<div class="col">
+				<input type="button" value="0" onclick="IN(0)">
+				</div>
+				<div class="col">
+				<input type="button" value="%" style="font-size:18px;" onclick="IN('%')">
+				</div>
+				<div class="col">
+				<input type="button" value="/" onclick="IN('/')">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+				<input type="button" value="Clear" class="last" onclick="reset();">
+				</div>
+				<div class="col">
+				<input type="button" value="  =  " class="last" onclick="show()" >
+				</div>
+			</div>
+			
+			
+			
+			
+		</form>
+	</div>
+</body>
+<script>
+	
+	function IN(val)
+	{
+		var exp = document.getElementById("exp").value;
+		document.getElementById("exp").value = exp + val;
+	}
+
+	function show()
+	{
+		var exp = document.getElementById("exp").value;
+		document.getElementById("exp").value = eval(exp);
+	}
+
+</script>
+
+</html>
