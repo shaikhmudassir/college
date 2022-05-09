@@ -1,0 +1,180 @@
+<html>
+	<head>
+		<style>
+		input[type = button]
+		{
+			border: 1px solid transparent;
+			color: #000;
+			background-color: #f8f9fa;
+			border-color: #f8f9fa;
+			padding: 5%;
+			font-size: 25;
+			margin:5%;
+		}
+		input[type = text]
+		{
+			width: 90%;
+			padding: .375rem .75rem;
+			font-size: 1rem;
+			line-height: 1.5;
+			color: #212529;
+			background-color: #fff;
+			background-clip: padding-box;
+			border: 1px solid #ced4da;
+			margin-bottom:2%;
+		}
+		.row
+		{
+			display:flex;
+		}
+		.col
+		{
+			flex:1;;
+		}
+		#args1, #args2
+		{
+			width:80%
+		}
+		</style>
+	</head>
+<body>
+	<div style="margin:10% 25%;">
+		<form>
+			<div class="row">
+				<div class="col">
+				<input type="text" id="txt" placeholder="String . . . . . .">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+				<input type="text" id="args1" placeholder="First Argument">
+				</div>
+				
+				<div class="col">
+				<input type="text" id="args2" placeholder="Second Argument">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+				<input type="button" value="Length" onclick="show('length')">
+				</div>
+				
+				<div class="col">
+				<input type="button" value="Slice" onclick="show('slice')">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+				<input type="button" value="Substring" onclick="show('substring')">
+				</div>
+			
+				<div class="col">
+				<input type="button" value="Substr" onclick="show('substr')">
+				</div>
+				
+			</div>
+			<div class="row">
+				
+				<div class="col">
+				<input type="button" value="replace" onclick="show('replace')">
+				</div>
+				
+				<div class="col">
+				<input type="button" value="toUpperCase" onclick="show('toUpperCase')">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+				<input type="button" value="toLowerCase" onclick="show('toLowerCase')">
+				</div>
+				
+				<div class="col">
+				<input type="button" value="concat" onclick="show('concat')">
+				</div>
+			</div>
+			<div class="row">	
+				<div class="col">
+				<input type="button" value="trim" onclick="show('trim')">
+				</div>
+			
+				<div class="col">
+				<input type="button" value="padStart" onclick="show('padStart')">
+				</div>
+			</div>
+			<div class="row">	
+				<div class="col">
+				<input type="button" value="padEnd" onclick="show('padEnd')">
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+<script>
+
+	function show(a)
+	{
+		var txt = document.getElementById("txt").value;
+		var args1 = document.getElementById("args1").value;
+		var args2 = document.getElementById("args2").value;
+		
+		if(!isNaN(args1))
+		{
+			args1 = parseInt(args1)
+		}
+		if(!isNaN(args2))
+		{
+			args2 = parseInt(args2)
+		}
+		switch(a)
+		{
+			case 'length':
+			document.getElementById("txt").value = txt.length;
+			break;
+			
+			case 'slice':
+			document.getElementById("txt").value = txt.slice(args1,args2);
+			break;
+			
+			case 'substring':
+			document.getElementById("txt").value = txt.substring(args1,args2);
+			break;
+			
+			case 'substr':
+			document.getElementById("txt").value = txt.substr(args1,args2);
+			break;
+			
+			case 'replace':
+			document.getElementById("txt").value = txt.replace(args1,args2);
+			break;
+			
+			case 'toUpperCase':
+			document.getElementById("txt").value = txt.toUpperCase(args1,args2);
+			break;
+			
+			case 'toLowerCase':
+			document.getElementById("txt").value = txt.toLowerCase(args1,args2);
+			break;
+			
+			case 'concat':
+			document.getElementById("txt").value = txt.concat(args1,args2);
+			break;
+			
+			case 'trim':
+			document.getElementById("txt").value = txt.trim(args1,args2);
+			break;
+			
+			case 'padStart':
+			document.getElementById("txt").value = txt.padStart(args1,args2);
+			break;
+			
+			case 'padEnd':
+			document.getElementById("txt").value = txt.padEnd(args1,args2);
+			break;
+			
+			
+		}
+	}
+
+</script>
+
+</html>
